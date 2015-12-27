@@ -43,7 +43,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
         <li><%= link_to "Submit Post", new_link_path %></li>        
-        <li><%= link_to "Posts", link_path %></li>
+        <li><%= link_to "Posts", links_path %></li>
         <li><%= link_to "Community", users_path %></li>
         <li><%= link_to "My Account", edit_user_registration_path %></li>
         <% end %>
