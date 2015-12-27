@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_votable (0.10.0)
     arel (6.0.3)
     autoprefixer-rails (6.1.1)
       execjs
@@ -152,6 +153,9 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    simple_form (3.0.4)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     spring (1.4.4)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -184,6 +188,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_votable
   autoprefixer-rails
   bootstrap-sass
   coffee-rails (= 4.0.0)
@@ -197,6 +202,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (= 4.0.3)
   sdoc (= 0.4.0)
+  simple_form
   spring
   sqlite3
   stripe
