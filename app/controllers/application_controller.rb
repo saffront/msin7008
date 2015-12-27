@@ -11,4 +11,9 @@ class ApplicationController < ActionController::Base
   		devise_parameter_sanitizer.for(:sign_up) << :name
 	    devise_parameter_sanitizer.for(:account_update) << :name
   	end
+
+  def index
+    @links = Link.all.order("created_at DESC")
+  end﻿
+end
 end
