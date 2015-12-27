@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
+
+  resources :comments
 devise_for :users, controllers: { registrations: 'users/registrations' }
+  resources :links do
+    member do
+      put "like", to:    "links#upvote"
+      put "dislike", to: "links#downvote"
+    end
+    resources :comments
+  end    
   resources :users do
     resource :profile
   end
+
   resources :contacts
   get '/about' => 'pages#about'
   root 'pages#home'
