@@ -15,5 +15,6 @@ class ApplicationController < ActionController::Base
   def index
     @links = Link.all.order("created_at DESC")
   end﻿
+  
 end
 end
