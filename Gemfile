@@ -21,8 +21,6 @@ gem 'autoprefixer-rails'
 gem 'acts_as_votable'
 gem 'simple_form'
 
-gem 'aws-sdk', '~> 2'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.3'
 # Use Uglifier as compressor for JavaScript assets
