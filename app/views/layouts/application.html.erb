@@ -39,9 +39,9 @@
         <% if user_signed_in? %>
           <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary navbar-btn' %>
         <% else %>
-          <%= link_to "Log In", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %>
-          <%= link_to "auth/facebook" 
-        <% end %>
+          <li><%= link_to "Log In", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %> <% end %></li>
+          <li><%= link_to "/auth/facebook" do %> <%= image_tag('fb.png', width: '45', height: '45', class: '') %>
+          <% end %></li>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
