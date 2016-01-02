@@ -14,6 +14,8 @@ gem 'figaro'
 gem 'bootstrap-sass'
 gem 'devise'
 
+gem 'omniauth'
+
 gem 'paperclip'
 
 gem 'autoprefixer-rails'
