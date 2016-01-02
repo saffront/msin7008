@@ -12,9 +12,10 @@ end
 gem 'stripe'
 gem 'figaro'
 gem 'bootstrap-sass'
-gem 'devise'
 
+gem 'devise'
 gem 'omniauth'
+gem 'omniauth-facebook'
 
 gem 'paperclip'
 
