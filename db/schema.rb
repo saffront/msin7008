@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151227224903) do
+ActiveRecord::Schema.define(version: 20160102221914) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "link_id"
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(version: 20151227224903) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "identities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id"
 
   create_table "links", force: :cascade do |t|
     t.string   "title"
@@ -75,6 +85,14 @@ ActiveRecord::Schema.define(version: 20151227224903) do
     t.datetime "avatar_updated_at"
   end
 
+  create_table "socialusers", force: :cascade do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -91,10 +109,14 @@ ActiveRecord::Schema.define(version: 20151227224903) do
     t.integer  "plan_id"
     t.string   "stripe_customer_token"
     t.string   "name"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["provider"], name: "index_users_on_provider"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["uid"], name: "index_users_on_uid"
 
   create_table "votes", force: :cascade do |t|
     t.integer  "votable_id"
